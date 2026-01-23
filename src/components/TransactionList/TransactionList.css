@@ -1,0 +1,22 @@
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Estado vazio */
+.empty-message {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty-message svg {
+  color: #9ca3af;
+}

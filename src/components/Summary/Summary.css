@@ -1,0 +1,58 @@
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-header svg {
+  stroke-width: 2;
+}
+
+.card-title {
+  font-size: 14px;
+  color: var(--text-color); /* neutro proposital */
+}
+
+.card-value {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Valores */
+.income .card-value {
+  color: #16a34a;
+}
+
+.expense .card-value {
+  color: #dc2626;
+}
+
+.balance .card-value {
+  color: #2563eb;
+}
+
+.balance.negative .card-value {
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
