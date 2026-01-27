@@ -1,4 +1,4 @@
-import { useDashboardData } from "../hooks/useDashboardData.js";
+import { useDashboardData } from "../../hooks/useDashboardData.js";
 import ExpensesByCategoryChart from "./ExpensesByCategoryChart.jsx";
 import MonthlyExpensesChart from "./MonthlyEvolutionChart.jsx";
 import './Dashboard.css';

@@ -4,23 +4,25 @@ import Header from './components/Header/Header.jsx'
 import Summary from './components/Summary/Summary.jsx'
 import Filters from './components/Filters/Filters.jsx';
 import Toast from './components/Toast/Toast.jsx';
-import Dashboard from './Dashboard/Dashboard.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
 import TransactionForm from './components/TransactionForm/TransactionForm.jsx';
 import TransactionList from './components/TransactionList/TransactionList.jsx';
+import PeriodFilter from './components/PeriodFilter/PeriodFilter.jsx'
 
 import { useTransactions } from './hooks/useTransactions.js';
 import { useFilters } from './hooks/useFilters.js';
 import { useTheme } from './hooks/useTheme.js';
 import { useSummary } from './hooks/useSummary.js'
 import { useCategories } from './hooks/useCategories.js';
-
-import './App.css'
+import { usePeriodFilter } from './hooks/usePeriodFilter.js';
 import { useToast } from './hooks/useToast.js';
 import { useScroll } from './hooks/useScroll.js';
 
+import './App.css'
+
 function App() {
   const [editingTransaction, setEditingTransaction] = useState(null);
-  
+
   const {
     transactions,
     pendingDelete,
@@ -31,10 +33,18 @@ function App() {
   } = useTransactions();
 
   const {
+    month,
+    year,
+    setMonth,
+    setYear,
+    filteredByPeriod
+  } = usePeriodFilter(transactions)
+
+  const {
     filters,
     setFilters,
     filteredTransactions
-  } = useFilters(transactions)
+  } = useFilters(filteredByPeriod)
 
   const {
     theme,
@@ -45,7 +55,7 @@ function App() {
     income,
     expense,
     balance
-  } = useSummary(transactions);
+  } = useSummary(filteredByPeriod);
 
   const {
     toast,
@@ -62,6 +72,8 @@ function App() {
     categories,
     addCategory
   } = useCategories();
+
+
 
   function handleAddTransaction(data) {
     addTransaction(data)
@@ -83,23 +95,32 @@ function App() {
     setEditingTransaction(null)
     showToast('Transação atualizada com sucesso!')
   }
-  
+
 
   return (
     <>
+
+
       <Header
         onToggleTheme={toggleTheme}
         theme={theme}
       />
 
       <main className="container">
+        <PeriodFilter
+          month={month}
+          year={year}
+          onMonthChange={setMonth}
+          onYearChange={setYear}
+        />
+
         <Summary
           income={income}
           expense={expense}
           balance={balance}
         />
 
-        <Dashboard transactions={transactions}/>
+        <Dashboard transactions={transactions} />
 
         <TransactionForm
           categories={categories}
@@ -119,6 +140,7 @@ function App() {
           onChange={setFilters}
           categories={categories}
         />
+
 
         <TransactionList
           transactions={filteredTransactions}
