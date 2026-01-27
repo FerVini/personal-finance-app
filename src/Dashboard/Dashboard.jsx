@@ -1,6 +1,6 @@
-import { useDashboardData } from "../hooks/useDashboardData";
-import ExpensesByCategoryChart from "./expensesByCategoryChart";
-import MonthlyExpensesChart from "./MonthlyEvolutionChart";
+import { useDashboardData } from "../hooks/useDashboardData.js";
+import ExpensesByCategoryChart from "./ExpensesByCategoryChart.jsx";
+import MonthlyExpensesChart from "./MonthlyEvolutionChart.jsx";
 import './Dashboard.css';
 
 export default function Dashboard({transactions}) {
