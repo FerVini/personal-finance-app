@@ -1,11 +1,12 @@
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Header from './components/Header/Header.jsx'
 import Summary from './components/Summary/Summary.jsx'
 import Filters from './components/Filters/Filters.jsx';
 import Toast from './components/Toast/Toast.jsx';
-import TransactionForm from './components/TransactionForm/TransactionForm.jsx'
-import TransactionList from './components/TransactionList/TransactionList.jsx'
+import Dashboard from './Dashboard/Dashboard.jsx';
+import TransactionForm from './components/TransactionForm/TransactionForm.jsx';
+import TransactionList from './components/TransactionList/TransactionList.jsx';
 
 import { useTransactions } from './hooks/useTransactions.js';
 import { useFilters } from './hooks/useFilters.js';
@@ -97,6 +98,8 @@ function App() {
           expense={expense}
           balance={balance}
         />
+
+        <Dashboard transactions={transactions}/>
 
         <TransactionForm
           categories={categories}
