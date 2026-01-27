@@ -1,27 +1,32 @@
 import { useMemo, useState } from "react";
 
 export function usePeriodFilter(transactions) {
-    const now = new Date();
+  const now = new Date();
 
-    const [month, setMonth] = useState(now.getMonth());
-    const [year, setYear] = useState(now.getFullYear());
+  const [period, setPeriod] = useState({
+    month: 'all',
+    year: 'all'
+  });
 
-    const filteredByPeriod = useMemo(() => {
-        return transactions.filter(transaction => {
-            const date = new Date(transaction.date);
+  const filteredByPeriod = useMemo(() => {
+    return transactions.filter(transaction => {
+      const date = new Date(transaction.date);
 
-            return (
-                date.getMonth() === month &&
-                date.getFullYear() === year
-            );
-        });
-    }, [transactions, month, year]);
+      const matchMonth =
+        period.month === 'all' ||
+        date.getMonth() === Number(period.month);
 
-    return {
-        month,
-        year,
-        setMonth,
-        setYear,
-        filteredByPeriod
-    }
+      const matchYear =
+        period.year === 'all' ||
+        date.getFullYear() === Number(period.year);
+
+      return matchMonth && matchYear;
+    });
+  }, [transactions, period]);
+
+  return {
+    period,
+    setPeriod,
+    filteredByPeriod
+  };
 }

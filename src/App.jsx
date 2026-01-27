@@ -33,12 +33,11 @@ function App() {
   } = useTransactions();
 
   const {
-    month,
-    year,
-    setMonth,
-    setYear,
+    period,
+    setPeriod,
     filteredByPeriod
   } = usePeriodFilter(transactions)
+
 
   const {
     filters,
@@ -108,11 +107,10 @@ function App() {
 
       <main className="container">
         <PeriodFilter
-          month={month}
-          year={year}
-          onMonthChange={setMonth}
-          onYearChange={setYear}
+          period={period}
+          onChange={setPeriod}
         />
+
 
         <Summary
           income={income}
