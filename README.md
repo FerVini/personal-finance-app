@@ -8,7 +8,7 @@ O projeto simula um cenário real de uso, priorizando **clareza de dados**, **ma
 
 ## 🔗 Demonstração
 
-- 🌐 Aplicação online: *(adicione o link quando fizer deploy)*
+- 🌐 Aplicação online: https://personal-finance-app-theta-ten.vercel.app/
 - 📦 Repositório: https://github.com/FerVini/personal-finance-app
 
 ---
