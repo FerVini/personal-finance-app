@@ -1,113 +1,116 @@
-# 💰 Controle Financeiro Pessoal
+# 💰 Personal Finance App
 
-![React](https://img.shields.io/badge/React-18-blue?logo=react)
-![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)
-![CSS](https://img.shields.io/badge/CSS3-Responsive-blue?logo=css3)
-![Status](https://img.shields.io/badge/Status-Concluído-success)
+Aplicação web para **controle financeiro pessoal**, desenvolvida com foco em **organização de despesas**, **regras de negócio no front-end** e **boas práticas de arquitetura em React**.
 
-Aplicação **front-end** para controle de receitas e despesas, desenvolvida com foco em **boas práticas de React**, **experiência do usuário (UX)** e **organização de estado com hooks personalizados**.
-
-O projeto implementa um sistema financeiro pessoal completo, com persistência local e feedback visual em todas as ações do usuário.
+O projeto simula um cenário real de uso, priorizando **clareza de dados**, **manutenibilidade do código** e **estrutura escalável**.
 
 ---
 
-## 🚀 Demonstração
+## 🔗 Demonstração
 
-🔗 **Acesse a aplicação:**  
-👉 https://personal-finance-app-theta-ten.vercel.app/
+- 🌐 Aplicação online: *(adicione o link quando fizer deploy)*
+- 📦 Repositório: https://github.com/FerVini/personal-finance-app
+
+---
+
+## 🎯 Objetivo do Projeto
+
+Este projeto foi desenvolvido com o objetivo de:
+- Consolidar conhecimentos em **React** e **JavaScript moderno**
+- Praticar **modelagem de estado** e **regras de negócio no front-end**
+- Aplicar **boas práticas de componentização e organização de código**
+- Simular uma aplicação utilizada por usuários finais
 
 ---
 
-## 🧩 Funcionalidades
+## 💡 Problema que o projeto resolve
 
-- ✅ Cadastro, edição e remoção de transações
-- 🔄 Undo (desfazer exclusão) com feedback visual
-- 🗂 Categorias dinâmicas (persistidas no LocalStorage)
-- 🔍 Filtros por:
-  - Tipo (receita / despesa)
-  - Categoria
-  - Data e valor
-- 🌗 Tema claro e escuro
-- 🔔 Sistema de Toast para mensagens de sucesso, erro e informação
-- 💾 Persistência local via LocalStorage
-- 📱 Layout totalmente responsivo
+Muitas pessoas têm dificuldade em acompanhar seus gastos e entender sua situação financeira mensal.
+
+O **Personal Finance App** centraliza receitas e despesas, permitindo:
+- Visualizar o saldo atual
+- Entender para onde o dinheiro está indo
+- Organizar informações financeiras de forma simples e acessível
 
 ---
+
+## ⚙️ Funcionalidades
+
+- Cadastro de receitas e despesas
+- Classificação por categorias
+- Cálculo automático de saldo
+- Filtros por período
+- Persistência de dados no navegador
+- Interface responsiva
+
+---
+
+## 🧠 Decisões Técnicas
+
+- **Componentização** para reutilização e consistência visual
+- **Separação clara de responsabilidades** entre UI, lógica e regras de negócio
+- **Modelagem explícita de dados financeiros**, facilitando manutenção
+- Estrutura preparada para **evolução futura** do projeto
+- Estilos isolados para evitar conflitos e melhorar legibilidade
+
+---
+
+## 🏗️ Arquitetura do Projeto
+
+A estrutura do projeto foi pensada para facilitar manutenção, leitura e escalabilidade:
+
+```txt
+src/
+├── components/        # Componentes reutilizáveis
+├── pages/             # Páginas da aplicação
+├── hooks/             # Hooks customizados
+├── services/          # Lógica de acesso a dados
+├── styles/            # Estilos globais e temas
+├── utils/             # Funções utilitárias
+└── App.jsx            # Composição principal
+```
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **React 18**
-- **Vite**
-- **JavaScript (ES6+)**
-- **CSS puro** com variáveis para tema
-- **Lucide React** (ícones)
-- **LocalStorage API**
+- *React* — construção de interfaces e componentização
+- *JavaScript(ES6+)* — lógica de negócio e manipulação de dados
+- *Vite* — ambiente de desenvolvimento rápido e moderno
+- *CSS Module / CSS* — estilização isolada e organizada
+- *LocalStorage* — persistência de dados no navegador
 
----
-
-## 🧠 Arquitetura e Decisões Técnicas
-
-O projeto foi estruturado visando **manutenibilidade e escalabilidade**:
-
-### 🔹 Hooks personalizados
-Separação clara de responsabilidades através de hooks:
-
-- `useTransactions` — regra de negócio das transações
-- `useFilters` — lógica de filtros e ordenação
-- `useSummary` — cálculos financeiros (receita, despesa, saldo)
-- `useTheme` — controle de tema e persistência
-- `useToast` — gerenciamento de feedback visual
-- `useCategories` — categorias dinâmicas persistidas
-
-### 🔹 Componentização
-Componentes pequenos, reutilizáveis e focados em uma única responsabilidade:
-- Header
-- Summary
-- TransactionForm
-- TransactionList / TransactionItem
-- Filters
-- Toast
-
-### 🔹 UX e Acessibilidade
-- Feedback imediato para todas as ações
-- Estados vazios bem definidos
-- Animações leves e respeitando `prefers-reduced-motion`
-- Botões com ícones e rótulos claros
-
----
-
-## 📦 Instalação e Uso
+## 🚀 Como executar o projeto localmente
 
 ```bash
 # Clone o repositório
 git clone https://github.com/FerVini/personal-finance-app
 
-# Acesse a pasta
+# Acesse a pasta do projeto
 cd personal-finance-app
 
 # Instale as dependências
 npm install
 
-# Rode o projeto
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
+A aplicação estará disponivel em `http://localhost:5173`.
 
-## 📚 Aprendizados
+---
 
-Este projeto consolidou conhecimentos importantes, como:
+## 📈 Possíveis evoluções
 
-- Criação e uso de hooks customizados
-- Organização de estado complexo no React
-- Persistência de dados no front-end
-- Boas práticas de UX
-- Separação entre lógica de negócio e UI
-- Estruturação de projetos para portfólio profissional
+- Autenticação de usuários
+- Exportação de relatórios
+- Integração com API backend
+- Testes automatizados
 
-## 👨‍💻 Autor
+---
 
-Desenvolvido por **Fernando Vinicius**
+## 👤 Autor
+**Fernando Vinicius** - Desenvolvedor Front-End
+- Github: http://github.com/FerVini
+- Linkedin: https://www.linkedin.com/in/fervini/
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Fernando%20Vinicius-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fervini/)
-[![GitHub](https://img.shields.io/badge/GitHub-FerVini-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FerVini)
-[![Portfólio](https://img.shields.io/badge/Portfólio-Acessar-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://fervini.github.io/Curriculo/)
+---
+
+⭐ Projeto desenvolvido com foco em aprendizado contínuo e boas práticas de front-end.
